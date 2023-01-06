@@ -3,7 +3,7 @@
  */
 public with sharing class TwilioUtil {
   private static final String TWILIO_NAMED_CREDENTIAL = 'callout:TwilioMCAE';
-  private static final TwilioMCAESetting__mdt TWILIO_CMT = TwilioMCAESetting__mdt.getInstance(
+  private static final 	asj2__TwilioMCAESetting__mdt TWILIO_CMT = asj2__TwilioMCAESetting__mdt.getInstance(
     'default'
   );
 

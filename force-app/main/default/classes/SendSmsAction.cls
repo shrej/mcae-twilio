@@ -1,7 +1,7 @@
 /**
  * @description Send SMS with Twilio Invocable Action
  */
-public with sharing class SendSmsAction {
+global with sharing class SendSmsAction {
   /**
    * @description Send SMS Invocable Action with twilio
    * @param messages A list of Twilio SMS requests
@@ -11,7 +11,7 @@ public with sharing class SendSmsAction {
     label='Send an SMS with Twilio'
     description='Send an SMS with Twilio.'
   )
-  public static List<TwilioSmsResponse> sendTextMessages(
+  global static List<TwilioSmsResponse> sendTextMessages(
     List<TwilioSmsRequest> messages
   ) {
     List<TwilioSmsResponse> responses = new List<TwilioSmsResponse>();
@@ -34,34 +34,34 @@ public with sharing class SendSmsAction {
   /**
    * @description Input Type for the invocable action
    */
-  public class TwilioSmsRequest {
+  global class TwilioSmsRequest {
     @InvocableVariable(
       required=true
       label='To Phone Number'
       description='The Destination Phone Number with country code'
     )
-    public String toPhoneNumber;
+    global String toPhoneNumber;
     @InvocableVariable(
       required=true
       label='Your Message'
       description='The message that you would like to send. You can also include emojis 😊'
     )
-    public String messageToSend;
+    global String messageToSend;
     @InvocableVariable(
       label='Media URL'
       description='Optional. Please only add publicly accessible media urls.'
     )
-    public String mediaUrl;
+    global String mediaUrl;
   }
 
   /**
    * @description Output Type for the invocable action
    */
-  public class TwilioSmsResponse {
+  global class TwilioSmsResponse {
     @InvocableVariable(
       label='Response Status Code'
       description='The response code from Twilio. 201 status code means that the request to twilio was successful.'
     )
-    public Integer statusCode;
+    global Integer statusCode;
   }
 }
